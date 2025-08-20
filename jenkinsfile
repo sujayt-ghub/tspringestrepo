@@ -59,7 +59,7 @@ pipeline {
      
     stage('Update Deployment File') {
         environment {
-           GIT_REPO_NAME = "spring-app-july24"
+           GIT_REPO_NAME = "spring-app-july28"
            GIT_USER_NAME = "sujayt-ghub"
         }
         steps {
@@ -76,7 +76,7 @@ pipeline {
                     sed -i 's/PLUS/ /g' kustomization.yaml
                     git add kustomization.yaml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
-                    git remote set-url origin https://sujayt-ghub:${GITHUB_TOKEN}@github.com/sujayt-ghub/spring-app-july24.git
+                    git remote set-url origin https://sujayt-ghub:${GITHUB_TOKEN}@github.com/sujayt-ghub/spring-app-july28.git
                     git push origin HEAD:main
                     #chmod -R 777 //var/lib/jenkins/workspace/*
                     ##git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
